@@ -262,6 +262,7 @@ def main():
     parser.add_argument("--ms_features", action="store_true")
     parser.add_argument("--one_neck", action="store_true")
     parser.add_argument("--use_clip", type=bool, default=True,help="Whether to use CLIP model for text and image prompt fusion")
+    parser.add_argument("--clip_model", type=str, default="hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224")
 
     args = parser.parse_args()
     print("Clearing CUDA cache...")
