@@ -1,0 +1,10 @@
+[2025-06-14 21:39:59,327] Loaded hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224 model config.
+[2025-06-14 21:40:06,968] Loading pretrained hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224 weights (/home/uqz9095/.cache/huggingface/hub/models--microsoft--BiomedCLIP-PubMedBERT_256-vit_base_patch16_224/snapshots/9f341de24bfb00180f1b847274256e9b65a3a32e/open_clip_pytorch_model.bin).
+Training Epoch 2: 0it [00:00, ?it/s]Training Epoch 2: 0it [00:00, ?it/s]
+Traceback (most recent call last):
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu.py", line 501, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu.py", line 386, in main
+    epoch_loss /= total_batches
+ZeroDivisionError: division by zero

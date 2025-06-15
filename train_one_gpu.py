@@ -88,7 +88,7 @@ def build_loaders(root_dir, batch_size=4, num_workers=4):
     train_sets, val_sets, loaders = {}, {}, {}
     for oid in ORGANS.keys():
         try:
-            full_ds = OrganSliceDataset(root_dir, organ_id=oid)
+            full_ds = OrganSliceDataset(root_dir, type="img")
         except RuntimeError:
             continue
         train_ds, val_ds = train_val_split(full_ds, val_ratio=0.2)

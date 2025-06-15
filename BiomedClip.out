@@ -1,0 +1,7 @@
+Clearing CUDA cache...
+CUDA cache cleared.
+Created directory: ./work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250614-2139
+Checkpoint loaded successfully. Starting from epoch 1.
+
+Epoch 2/100
+Total batches per epoch: 0

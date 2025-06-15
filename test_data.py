@@ -1,4 +1,3 @@
-
 # id ↔ name 按你截图确定
 ORGANS = {
      1: "liver",
@@ -21,38 +20,32 @@ from os.path import join, basename
 from skimage.transform import resize
 from torch.utils.data import Dataset
 from transformers import AutoTokenizer
+import nibabel as nib
+
 
 class OrganSliceDataset(Dataset):
     """
-    针对单一器官 (organ_id) 的切片级数据集：
-        imgs → 3×1024×1024  float32  [0,1]
-        gt   → 1×256×256    int64    {0,1}
-        bbox → 4            float32  [x1,y1,x2,y2]
+    读取指定目录下的 .nii.gz 文件，根据 type 选择 img 或 gt。
+    保持原有的数据处理方式和输出格式。
+    输出: (img_tensor, gt_tensor, bbox_tensor, 文件名, text_ids)
     """
-    def __init__(self, npz_dir, organ_id,
-                 bbox_shift=20, img_size=1024, gt_size=256,
-                 ):
+    def __init__(self, nii_dir, organ_id=1, bbox_shift=20, img_size=1024, gt_size=256, type="gt"):
         super().__init__()
-        self.npz_files  = sorted(glob.glob(join(npz_dir, "*.npz")))
-        self.organ_id   = organ_id
-        self.organ_name = ORGANS[organ_id]
+        assert type in ["img", "gt"], "type must be 'img' or 'gt'"
+        self.type = type
+        self.nii_dir = nii_dir
+        self.organ_id = organ_id
         self.bbox_shift = bbox_shift
-        self.img_size   = img_size
-        self.gt_size    = gt_size
+        self.img_size = img_size
+        self.gt_size = gt_size
+        self.files_img = sorted([f for f in os.listdir(nii_dir) if f.endswith('_img.nii.gz')])
+        self.files_gt = sorted([f for f in os.listdir(nii_dir) if f.endswith('_gt.nii.gz')])
+        assert len(self.files_img) == len(self.files_gt), "img/gt数量不一致"
         self.tokenizer = AutoTokenizer.from_pretrained("microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224")
-        self.slice_map = []
-        for fid, f in enumerate(self.npz_files):
-            with np.load(f) as d:
-                gts = d["gts"]
-            for sid, slice_gt in enumerate(gts):
-                if np.any(slice_gt == organ_id):
-                    self.slice_map.append((fid, sid))
-
+        self.slice_map = list(range(len(self.files_img)))
         if not self.slice_map:
-            raise RuntimeError(f"No slice with organ id {organ_id} found.")
-
-        print(f"[{ORGANS[organ_id]}]  cases: {len(self.npz_files)}, "
-              f"slices: {len(self.slice_map)}")
+            raise RuntimeError(f"No nii.gz files found in {nii_dir}")
+        # print(f"Found {len(self.files_img)} img/gt pairs in {nii_dir}")
 
     @staticmethod
     def _resize(arr, tgt, order):
@@ -60,29 +53,26 @@ class OrganSliceDataset(Dataset):
                       preserve_range=True, mode="constant",
                       anti_aliasing=(order != 0)).astype(arr.dtype)
 
-    def __len__(self): return len(self.slice_map)
+    def __len__(self):
+        return len(self.slice_map)
 
     def __getitem__(self, idx):
-        fid, sid = self.slice_map[idx]
-        npz_path = self.npz_files[fid]
-        case     = os.path.splitext(basename(npz_path))[0]
-
-        with np.load(npz_path) as d:
-            img = d["imgs"][sid]      # (H,W) uint8
-            gt  = d["gts"][sid]       # (H,W) uint8
-
+        img_fname = self.files_img[idx]
+        gt_fname = self.files_gt[idx]
+        img_path = os.path.join(self.nii_dir, img_fname)
+        gt_path = os.path.join(self.nii_dir, gt_fname)
+        # 读取 nii.gz
+        img = nib.load(img_path).get_fdata()  # (H,W)
+        gt = nib.load(gt_path).get_fdata()    # (H,W)
         # resize
         if img.shape[0] != self.img_size:
             img = self._resize(img, self.img_size, order=3)
         if gt.shape[0] != self.gt_size:
-            gt  = self._resize(gt,  self.gt_size, order=0)
-
+            gt = self._resize(gt, self.gt_size, order=0)
         img = np.repeat(img[:, :, None], 3, axis=-1).astype("float32") / 255.
         img = np.transpose(img, (2,0,1))            # (3,H,W)
         gt = self._resize(gt, self.img_size, order=0)
-
         gt2D = (gt == self.organ_id).astype("uint8")# (H,W)
-
         # bbox
         y_idx, x_idx = np.where(gt2D > 0)
         x_min, x_max = np.min(x_idx), np.max(x_idx)
@@ -93,31 +83,29 @@ class OrganSliceDataset(Dataset):
         y_min = max(0, y_min - random.randint(0, self.bbox_shift))
         y_max = min(H, y_max + random.randint(0, self.bbox_shift))
         bbox  = np.array([x_min, y_min, x_max, y_max], dtype="float32")
-
-
         text_ids = self.tokenizer(
-            self.organ_name,
+            str(self.organ_id),
             truncation=True, padding="max_length",
             max_length=77, return_tensors="pt"
         )["input_ids"].squeeze(0)
-
         return (
             torch.tensor(img, dtype=torch.float32),
             torch.tensor(gt2D[None], dtype=torch.long),
             torch.tensor(bbox, dtype=torch.float32),
-            f"{case}-{sid:03d}.npy",
+            img_fname,
             text_ids
         )
+
 import torch, random, numpy as np
 from torch.utils.data import DataLoader
 
 def build_dataloaders():
     root_dir = "data/npy/CT_Abd"
-    batch_size, num_workers = 0, 0
+    batch_size, num_workers = 2, 0
     dataloaders = {}
     for oid, name in ORGANS.items():
         try:
-            ds = OrganSliceDataset(root_dir, organ_id=oid)
+            ds = OrganSliceDataset(root_dir, type="img")
             dl = DataLoader(ds, batch_size=batch_size,
                             shuffle=True, num_workers=num_workers,
                             pin_memory=True)
