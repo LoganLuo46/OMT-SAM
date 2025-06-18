@@ -34,7 +34,10 @@ ENV/
 *.swo
 
 # Project specific
-work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250611-1232/
+work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250611-1232
+*.pth
+*.sh
+data/
 
 # OS
 .DS_Store

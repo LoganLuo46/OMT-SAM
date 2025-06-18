@@ -31,6 +31,7 @@ from get_clip_embedding1 import create_modified_clip_model
 import torchvision.transforms as T
 from sklearn.model_selection import train_test_split
 from test_data import OrganSliceDataset, ORGANS
+import wandb
 
 
 
@@ -110,7 +111,7 @@ class MedSAM(nn.Module):
         mask_decoder,
         prompt_encoder,
         use_clip=False,
-
+        clip_variant="biomedclip",
     ):
         super().__init__()
         self.image_encoder = image_encoder
@@ -127,7 +128,12 @@ class MedSAM(nn.Module):
                 param.requires_grad = True
 
         if self.use_clip:
-            clip_model_name = "hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224"
+            if clip_variant == "biomedclip":
+                clip_model_name = "hf-hub:microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224"
+            elif clip_variant == "clip":
+                clip_model_name = "ViT-B-16"  # 例如 OpenCLIP 官方模型名
+            elif clip_variant == "bioclip":
+                clip_model_name = "hf-hub:your_bioclip_model"
             self.embed_dim = 256
             num_heads = 8
             self.clip_model, self.clip_preprocess = create_model_from_pretrained(clip_model_name)
@@ -221,7 +227,7 @@ def train_epoch(model, loaders, optimizer, loss_fn, device, use_amp=False):
             text_ids   = text_ids.to(device)
             with torch.cuda.amp.autocast(enabled=use_amp):
                 preds = model(imgs, bboxes.numpy(), text_ids)
-                loss  = loss_fn(preds, gts)           # Dice+BCE 已封装
+                loss  = loss_fn(preds, gts.float())           # Dice+BCE 已封装
             if use_amp:
                 scaler.scale(loss).backward()
                 scaler.step(optimizer)
@@ -244,16 +250,16 @@ def main():
     parser.add_argument("-i", "--tr_npy_path", type=str, default="data/npy/CT_Abd")
     parser.add_argument("-task_name", type=str, default="MedSAM-ViT-B")
     parser.add_argument("-model_type", type=str, default="vit_b")
-    parser.add_argument("--checkpoint", type=str, default="work_dir/SAM/sam_vit_b_01ec64.pth")
+    parser.add_argument("--checkpoint", type=str, default="./work_dir/SAM/sam_vit_b_01ec64.pth")
     parser.add_argument("--load_pretrain", type=bool, default=True, help="Load pretrain model")
     parser.add_argument("-pretrain_model_path", type=str, default="")
     parser.add_argument("-work_dir", type=str, default="./work_dir")
     parser.add_argument("-num_epochs", type=int, default=100)
-    parser.add_argument("-batch_size", type=int, default=4)
-    parser.add_argument("-num_workers", type=int, default=2)
+    parser.add_argument("-batch_size", type=int, default=8)
+    parser.add_argument("-num_workers", type=int, default=8)
     parser.add_argument("-weight_decay", type=float, default=0.01, help="Weight decay")
     parser.add_argument("-lr", type=float, default=0.0001, metavar="LR", help="Learning rate")
-    parser.add_argument("-use_wandb", type=bool, default=False, help="Use wandb for training log")
+    parser.add_argument("-use_wandb", action="store_true", default=False, help="Use wandb for training log")
     parser.add_argument("-use_amp", action="store_true", default=False, help="Use AMP")
     parser.add_argument("--resume", type=str, default="", help="Resume training from checkpoint")
     parser.add_argument("--device", type=str, default="cuda:0")
@@ -262,6 +268,7 @@ def main():
     parser.add_argument("--ms_features", action="store_true")
     parser.add_argument("--one_neck", action="store_true")
     parser.add_argument("--use_clip", type=bool, default=True,help="Whether to use CLIP model for text and image prompt fusion")
+    parser.add_argument("--clip_variant", type=str, default="biomedclip", choices=["biomedclip", "clip", "bioclip"], help="Which CLIP variant to use")
 
     args = parser.parse_args()
     print("Clearing CUDA cache...")
@@ -292,6 +299,7 @@ def main():
         mask_decoder=sam_model.mask_decoder,
         prompt_encoder=sam_model.prompt_encoder,
         use_clip=args.use_clip,
+        clip_variant=args.clip_variant,
     )
 
     loaders = build_loaders(args.tr_npy_path,
@@ -307,7 +315,7 @@ def main():
     seg_loss = monai.losses.DiceLoss(sigmoid=True, squared_pred=True)
     ce_loss = nn.BCEWithLogitsLoss()
 
-    checkpoint_path = args.checkpoint
+    checkpoint_path = args.resume if args.resume else args.checkpoint
     checkpoint = torch.load(checkpoint_path, map_location=torch.device('cpu'))
 
 # Ensure 'state_dict' is extracted if the checkpoint contains additional metadata
@@ -335,26 +343,30 @@ def main():
     # num_epochs=100
     best_loss = 1e10
     iter_num=0
-        
+    if args.use_wandb:
+        print("Using wandb")
+        wandb.init(project="SAM")
     for epoch in range(start_epoch, args.num_epochs):
         medsam_model.train()
         epoch_loss = 0
         epoch_dice = 0
         for oid, dl in loaders.items():
-            for image, gt2D, boxes, _, text_input in dl["train"]:
+            from tqdm import tqdm
+            train_loader = dl["train"]
+            for image, gt2D, boxes, _, text_input in tqdm(train_loader, desc=f"Training {ORGANS[oid]}", leave=False):
                 optimizer.zero_grad()
                 image, gt2D = image.to(device), gt2D.to(device)
                 boxes_np = boxes.numpy()
                 if args.use_amp:
                     with torch.autocast(device_type="cuda", dtype=torch.float16):
                         pred = medsam_model(image, boxes_np, text_input)
-                        loss = loss_fn(pred, gt2D)
+                        loss = loss_fn(pred, gt2D.float())
                     scaler.scale(loss).backward()
                     scaler.step(optimizer);
                     scaler.update()
                 else:
                     pred = medsam_model(image, boxes_np, text_input)
-                    loss = loss_fn(pred, gt2D)
+                    loss = loss_fn(pred, gt2D.float())
                     loss.backward();
                     optimizer.step()
 
@@ -372,8 +384,10 @@ def main():
         train_accuracy.append(epoch_dice)
 
         if args.use_wandb:
-            wandb.log({"epoch_loss": epoch_loss}, {"epoch_dice": epoch_dice})# Validation loop
-
+            wandb.log({"epoch_loss": epoch_loss, "epoch_dice": epoch_dice})
+            
+        
+        # Validation loop
         medsam_model.eval()
         val_results = defaultdict(dict)
         with torch.no_grad():
@@ -391,7 +405,7 @@ def main():
 
                     # model prediction
                     medsam_pred = medsam_model(image, bboxes, text_input)
-                    loss = seg_loss(medsam_pred, gt) + ce_loss(medsam_pred, gt.float())
+                    loss = seg_loss(medsam_pred, gt.float()) + ce_loss(medsam_pred, gt.float())
                     dice = compute_dice_coefficient(
                         gt.cpu().numpy(), (medsam_pred > 0.5).cpu().numpy()
                     )

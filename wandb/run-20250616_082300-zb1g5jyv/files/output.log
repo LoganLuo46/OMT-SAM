@@ -1,0 +1,18 @@
+Traceback (most recent call last):                                           
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu.py", line 484, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu.py", line 408, in main
+    loss = seg_loss(medsam_pred, gt) + ce_loss(medsam_pred, gt.float())
+           ~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/monai/losses/dice.py", line 191, in forward
+    tp, fp, fn = compute_tp_fp_fn(input, target, reduce_axis, ord, self.soft_label)
+                 ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/monai/losses/utils.py", line 56, in compute_tp_fp_fn
+    ground_o = LA.vector_norm(target, ord=ord, dim=reduce_axis)
+RuntimeError: linalg.vector_norm: Expected a floating point or complex tensor as input. Got Long

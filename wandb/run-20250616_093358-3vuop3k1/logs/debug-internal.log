@@ -1,0 +1,10 @@
+{"time":"2025-06-16T09:33:59.678085172-05:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/gpfs/home/uqz9095/OMT-SAM/wandb/run-20250616_093358-3vuop3k1/logs/debug-core.log"}
+{"time":"2025-06-16T09:33:59.937732045-05:00","level":"INFO","msg":"stream: created new stream","id":"3vuop3k1"}
+{"time":"2025-06-16T09:33:59.937844418-05:00","level":"INFO","msg":"stream: started","id":"3vuop3k1"}
+{"time":"2025-06-16T09:33:59.938024377-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"3vuop3k1"}
+{"time":"2025-06-16T09:33:59.938112198-05:00","level":"INFO","msg":"sender: started","stream_id":"3vuop3k1"}
+{"time":"2025-06-16T09:33:59.938129592-05:00","level":"INFO","msg":"handler: started","stream_id":"3vuop3k1"}
+{"time":"2025-06-16T09:34:00.051949633-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-16T13:22:15.362209789-05:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/limingluo2025-northwestern-university/SAM/3vuop3k1/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2025-06-16T17:44:50.08750369-05:00","level":"INFO","msg":"api: retrying HTTP error","status":500,"url":"https://api.wandb.ai/files/limingluo2025-northwestern-university/SAM/3vuop3k1/file_stream","body":"{\"error\":\"context deadline exceeded\"}"}
+{"time":"2025-06-16T17:45:17.965844015-05:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
