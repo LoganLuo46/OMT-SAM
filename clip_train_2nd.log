@@ -1,0 +1,17 @@
+Clearing CUDA cache...
+CUDA cache cleared.
+Created directory: ./work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250618-1313
+[liver]  cases: 40, slices: 2522
+[right_kidney]  cases: 40, slices: 1619
+[spleen]  cases: 40, slices: 1310
+[pancreas]  cases: 40, slices: 1274
+[aorta]  cases: 40, slices: 3486
+[ivc]  cases: 40, slices: 3226
+[right_adrenal_gland]  cases: 40, slices: 449
+[left_adrenal_gland]  cases: 40, slices: 534
+[gallbladder]  cases: 40, slices: 686
+[esophagus]  cases: 40, slices: 1074
+[stomach]  cases: 40, slices: 1557
+[left_kidney]  cases: 40, slices: 1650
+Checkpoint loaded successfully. Starting from epoch 40.
+Using wandb
