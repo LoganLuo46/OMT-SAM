@@ -3,8 +3,8 @@ import csv
 import matplotlib.pyplot as plt
 
 log_file = "clip_train.log"
-out_file = "epoch_avg_dice.csv"
-plot_file = "epoch_avg_dice.png"
+out_file = "biomedclip_epoch_avg_dice.csv"
+plot_file = "biomedclip_epoch_avg_dice.png"
 
 # List of organs (update if your organ set changes)
 organ_names = [
