@@ -54,8 +54,6 @@ environment.yml
 get_clip_embedding1.py
 preprocess.py
 requirements.txt
-test_data.py
-test_model.py
 train_one_organ.py
 train_one_gpu_bioclip.py
 train_one_gpu_clip.py

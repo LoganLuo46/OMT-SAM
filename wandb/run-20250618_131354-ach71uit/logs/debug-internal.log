@@ -5,3 +5,4 @@
 {"time":"2025-06-18T13:13:56.076208928-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"ach71uit"}
 {"time":"2025-06-18T13:13:56.076219609-05:00","level":"INFO","msg":"sender: started","stream_id":"ach71uit"}
 {"time":"2025-06-18T13:13:56.292056937-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-18T17:38:56.717078912-05:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/limingluo2025-northwestern-university/SAM/ach71uit/file_stream\": dial tcp: lookup api.wandb.ai on 1.1.1.1:53: read udp 172.20.213.11:39282->1.1.1.1:53: i/o timeout"}
