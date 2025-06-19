@@ -10,6 +10,15 @@
 | clip         | new_clip_train_new.err / new_clip_train_new.log        |                                                      | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_clip_20250619-094022 |
 
 
+## Additional Log File Notes
+
+In addition to the log files listed in the table above, the directory also contains the following files:
+
+- `bioclip_train.err` / `bioclip_train.log`
+- `new_clip_train.err` / `new_clip_train.log`
+
+These two sets of files correspond to the training logs for the bioclip and clip variants, and **contain information for 8 more epochs earlier than the `bioclip_train_new.err` / `bioclip_train_new.log` and `new_clip_train_new.err` / `new_clip_train_new.log` files listed in the table**. The data in these logs is clean, but since there was no corresponding `work_dir` directory (i.e., no complete output folder was saved at that time), they are not included in the table above. You may refer to these log files for additional training and validation information if needed.
+
 ## Average Dice per Epoch CSV and Plot
 
 The files `biomedclip_epoch_avg_dice.csv` and `biomedclip_epoch_avg_dice.png` contain the average Dice score across all organs for each epoch, extracted from the validation results in the log file, **for the first 39 epochs of the biomedclip variant**.
