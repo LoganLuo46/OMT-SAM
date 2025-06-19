@@ -1,1 +1,2 @@
-Training left_kidney:  26%|██▌       | 43/165 [00:59<02:44,  1.34s/it]       
+Validating right_kidney:  83%|████████▎ | 34/41 [00:27<00:03,  2.15it/s]     
+Liver Validation Complete: Loss: 0.1505, Dice: 0.8470

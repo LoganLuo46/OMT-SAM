@@ -463,3 +463,4 @@ val loss: 0.03601461090716263
   Esophagus - Val Loss: 0.0369, Dice: 0.9588
   Stomach - Val Loss: 0.0191, Dice: 0.9818
   Left_kidney - Val Loss: 0.0148, Dice: 0.9851
+Liver Validation Complete: Loss: 0.0163, Dice: 0.9878

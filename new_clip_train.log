@@ -77,3 +77,4 @@ Created directory: ./work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_2025061
 [left_kidney]  cases: 40, slices: 1650
 Checkpoint loaded successfully. Starting from epoch 1.
 Using wandb
+Liver Validation Complete: Loss: 0.1505, Dice: 0.8470
