@@ -1,6 +1,13 @@
 # OMT-SAM
 
-## Script, clip_variant, log and output directory mapping
+## Step 2: Script, clip_variant, log and output directory mapping
+
+**Script used:** `train_one_gpu_new.py`
+
+**Command format:**
+```bash
+python train_one_gpu_new.py --use_clip True --clip_variant bioclip -use_wandb
+```
 
 | clip_variant | First Round (trian.err / train.log)  | Second Round (train.err / train.log) | Output directory                                              |
 |:------------:|:-----------------------------------------------|:------------------------------------------------------|:------------------------------------------------------------|
