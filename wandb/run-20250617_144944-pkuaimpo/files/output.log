@@ -908,3 +908,5 @@ val loss: 0.0700453159893438
 Liver Validation Complete: Loss: 0.0299, Dice: 0.9837
 Right_kidney Validation Complete: Loss: 0.0242, Dice: 0.9775
 Spleen Validation Complete: Loss: 0.0341, Dice: 0.9719
+Pancreas Validation Complete: Loss: 0.1624, Dice: 0.8365
+Aorta Validation Complete: Loss: 0.0369, Dice: 0.9600
