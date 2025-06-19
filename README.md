@@ -9,6 +9,20 @@
 | bioclip      | bioclip_train_new.err / bioclip_train_new.log          |                                                      | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_bioclip_20250619-094022 |
 | clip         | new_clip_train_new.err / new_clip_train_new.log        |                                                      | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_clip_20250619-094022 |
 
+## Step 3: Organ Prompts with BiomedCLIP
+
+**Script used:** `train_one_gpu_new_Step3.py`
+
+**Command format:**
+```bash
+python train_one_gpu_new_Step3.py --use_clip True --clip_variant biomedclip -use_wandb --prompt_file organ_prompts_XXX.txt
+```
+
+| Prompt File | Training Logs (train.err / train.log) | Output Directory |
+|:------------:|:--------------------------------------:|:----------------:|
+| organ_prompts_ten.txt | Step3/ten-biomedclip_train.err / Step3/ten-biomedclip_train.log | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_biomedclip_20250619-134959 |
+| organ_prompts_twenty.txt | Step3/twenty-biomedclip_train.err / Step3/twenty-biomedclip_train.log | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_biomedclip_20250619-135253 |
+| organ_prompts_thirty.txt | Step3/thirty-biomedclip_train.err / Step3/thirty-biomedclip_train.log | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_biomedclip_20250619-135254 |
 
 ## Additional Log File Notes
 
