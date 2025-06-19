@@ -1,0 +1,12 @@
+liver: Segment the large, dense organ in the right upper abdomen below the diaphragm.
+spleen: Segment the soft organ on the left side of the abdomen near the stomach.
+kidney: Segment the bean-shaped organ near the spine in the mid-abdominal area.
+pancreas: Segment the elongated, flat gland behind the stomach and in front of the spine.
+stomach: Segment the J-shaped organ located on the left side beneath the diaphragm.
+gallbladder: Segment the small, pear-shaped organ beneath the liver.
+aorta: Segment the large, central blood vessel running vertically through the chest and abdomen.
+inferior vena cava: Segment the large vein that runs beside the aorta returning blood to the heart.
+adrenal gland: Segment the small triangular gland sitting on top of each kidney.
+bladder: Segment the fluid-filled organ in the pelvic cavity that stores urine.
+prostate: Segment the small gland below the bladder in males.
+colon: Segment the large intestine surrounding the abdomen in a loop shape.

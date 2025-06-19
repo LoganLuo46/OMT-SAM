@@ -1,0 +1,12 @@
+liver: Segment the liver region accurately
+right_kidney: Identify the right kidney region
+spleen: Localize the spleen in this image
+pancreas: Focus on the pancreas area
+aorta: Detect the aorta from the image
+ivc: Segment the inferior vena cava
+right_adrenal_gland: Mark the right adrenal gland
+left_adrenal_gland: Highlight the left adrenal gland
+gallbladder: Identify the gallbladder zone
+esophagus: Localize the esophagus
+stomach: Detect stomach structure
+left_kidney: Segment the left kidney region

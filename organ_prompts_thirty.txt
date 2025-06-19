@@ -1,0 +1,12 @@
+liver: Locate the large, reddish-brown organ in the upper right abdomen, beneath the diaphragm, involved in detoxification and metabolism.
+kidney: Identify the bean-shaped organs near the lower back on either side of the spine, responsible for filtering blood and producing urine.
+spleen: Find the soft, purple organ on the left side of the abdomen, just under the ribcage, that filters blood and supports immune function.
+pancreas: Segment the elongated, flat gland behind the stomach that secretes digestive enzymes and regulates blood sugar levels.
+gallbladder: Detect the small, pear-shaped sac beneath the liver, which stores and releases bile for digestion of fats.
+stomach: Highlight the hollow, muscular organ between esophagus and small intestine where food is mixed and digested.
+colon: Outline the large intestine, a long, coiled organ that absorbs water and stores fecal matter, encircling the abdomen.
+small intestine: Trace the long, narrow, coiled tube connecting stomach and colon, where most digestion and nutrient absorption occurs.
+bladder: Find the hollow muscular organ in the pelvis that stores urine before it is excreted from the body.
+prostate: Locate the small gland below the bladder in males, surrounding the urethra, involved in producing seminal fluid.
+uterus: Identify the hollow, pear-shaped organ in the female pelvis where fetal development occurs during pregnancy.
+rectum: Segment the final section of the large intestine that stores feces before they are expelled through the anus.

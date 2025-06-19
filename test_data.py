@@ -14,6 +14,28 @@ ORGANS = {
     13: "left_kidney",
 }
 
+def load_organ_prompts(prompt_file=None):
+    """Load prompts from a specific prompt file"""
+    prompts = {}
+    
+    if prompt_file is None:
+        print("No prompt file specified, using organ names as prompts")
+        return prompts
+    
+    try:
+        with open(prompt_file, 'r') as f:
+            for line in f:
+                if ':' in line:
+                    organ, prompt = line.strip().split(':', 1)
+                    prompts[organ.strip()] = prompt.strip()
+        print(f"Loaded prompts from {prompt_file}")
+    except FileNotFoundError:
+        print(f"Warning: {prompt_file} not found")
+    
+    return prompts
+
+# Load prompts globally - default to None
+ORGAN_PROMPTS = load_organ_prompts(None)
 
 import os, glob, random, numpy as np, torch
 from os.path import join, basename
@@ -30,7 +52,7 @@ class OrganSliceDataset(Dataset):
     """
     def __init__(self, npz_dir, organ_id, tokenizer,
                  bbox_shift=20, img_size=1024, gt_size=256,
-                 ):
+                 prompt_file=None):
         super().__init__()
         self.npz_files  = sorted(glob.glob(join(npz_dir, "*.npz")))
         self.organ_id   = organ_id
@@ -39,7 +61,8 @@ class OrganSliceDataset(Dataset):
         self.img_size   = img_size
         self.gt_size    = gt_size
         self.tokenizer = tokenizer
-        print(f"[OrganSliceDataset] organ: {self.organ_name}, tokenizer: {self.tokenizer}")
+        self.prompts = load_organ_prompts(prompt_file)
+        print(f"[OrganSliceDataset] organ: {self.organ_name}, tokenizer: {self.tokenizer}, prompt_file: {prompt_file}")
         self.slice_map = []
         for fid, f in enumerate(self.npz_files):
             with np.load(f) as d:
@@ -51,7 +74,7 @@ class OrganSliceDataset(Dataset):
         if not self.slice_map:
             raise RuntimeError(f"No slice with organ id {organ_id} found.")
 
-        print(f"[{ORGANS[organ_id]}]  cases: {len(self.npz_files)}, "
+        print(f"[{self.organ_name}]  cases: {len(self.npz_files)}, "
               f"slices: {len(self.slice_map)}")
 
     @staticmethod
@@ -94,9 +117,11 @@ class OrganSliceDataset(Dataset):
         y_max = min(H, y_max + random.randint(0, self.bbox_shift))
         bbox  = np.array([x_min, y_min, x_max, y_max], dtype="float32")
 
+        # Use prompt from loaded files, fallback to organ name if not found
+        prompt_text = self.prompts.get(self.organ_name, self.organ_name)
 
         text_ids = self.tokenizer(
-            self.organ_name,
+            prompt_text,
             truncation=True, padding="max_length",
             max_length=77, return_tensors="pt"
         )["input_ids"].squeeze(0)
@@ -111,13 +136,13 @@ class OrganSliceDataset(Dataset):
 import torch, random, numpy as np
 from torch.utils.data import DataLoader
 
-def build_dataloaders():
+def build_dataloaders(prompt_file=None, tokenizer=None):
     root_dir = "data/npy/CT_Abd"
     batch_size, num_workers = 0, 0
     dataloaders = {}
     for oid, name in ORGANS.items():
         try:
-            ds = OrganSliceDataset(root_dir, organ_id=oid)
+            ds = OrganSliceDataset(root_dir, organ_id=oid, tokenizer=tokenizer, prompt_file=prompt_file)
             dl = DataLoader(ds, batch_size=batch_size,
                             shuffle=True, num_workers=num_workers,
                             pin_memory=True)

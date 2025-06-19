@@ -1,0 +1,7 @@
+{"time":"2025-06-19T13:53:17.536094452-05:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/gpfs/home/uqz9095/OMT-SAM/wandb/run-20250619_135316-x5lvvpst/logs/debug-core.log"}
+{"time":"2025-06-19T13:53:17.71465682-05:00","level":"INFO","msg":"stream: created new stream","id":"x5lvvpst"}
+{"time":"2025-06-19T13:53:17.714686061-05:00","level":"INFO","msg":"stream: started","id":"x5lvvpst"}
+{"time":"2025-06-19T13:53:17.714700884-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"x5lvvpst"}
+{"time":"2025-06-19T13:53:17.714703186-05:00","level":"INFO","msg":"handler: started","stream_id":"x5lvvpst"}
+{"time":"2025-06-19T13:53:17.714711119-05:00","level":"INFO","msg":"sender: started","stream_id":"x5lvvpst"}
+{"time":"2025-06-19T13:53:17.860078223-05:00","level":"INFO","msg":"Starting system monitor"}
