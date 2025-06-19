@@ -279,10 +279,14 @@ def main():
         torch.cuda.reset_peak_memory_stats()
         print("CUDA cache cleared.")
     join = os.path.join
-    run_id = datetime.now().strftime("%Y%m%d-%H%M")
+    run_id = datetime.now().strftime("%Y%m%d-%H%M%S")
     use_clip_str = "_use_clip" if args.use_clip else "_no_clip"
-    model_save_path = join(args.work_dir,
-                           args.task_name + f"_MS{args.ms_features}" + f"_oneneck{args.one_neck}" + use_clip_str + "_" + run_id)
+    clip_variant = args.clip_variant
+    tokenizer_name = args.tokenizer
+    model_save_path = join(
+        args.work_dir,
+        f"{args.task_name}_MS{args.ms_features}_oneneck{args.one_neck}_{args.clip_variant}_{run_id}"
+    )
 
     #args = parser.parse_args()
     device = torch.device(args.device)

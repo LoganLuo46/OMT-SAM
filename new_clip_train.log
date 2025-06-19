@@ -78,3 +78,224 @@ Created directory: ./work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_2025061
 Checkpoint loaded successfully. Starting from epoch 1.
 Using wandb
 Liver Validation Complete: Loss: 0.1505, Dice: 0.8470
+Right_kidney Validation Complete: Loss: 0.0319, Dice: 0.9616
+Spleen Validation Complete: Loss: 0.0422, Dice: 0.9590
+Pancreas Validation Complete: Loss: 0.2312, Dice: 0.7149
+Aorta Validation Complete: Loss: 0.0412, Dice: 0.9477
+Ivc Validation Complete: Loss: 0.0810, Dice: 0.9063
+Right_adrenal_gland Validation Complete: Loss: 0.1873, Dice: 0.7556
+Left_adrenal_gland Validation Complete: Loss: 0.1384, Dice: 0.8157
+Gallbladder Validation Complete: Loss: 0.1099, Dice: 0.8743
+Esophagus Validation Complete: Loss: 0.1153, Dice: 0.8363
+Stomach Validation Complete: Loss: 0.0657, Dice: 0.9263
+Left_kidney Validation Complete: Loss: 0.0285, Dice: 0.9671
+Time: 20250619-0400, train_Loss: 0.05687727364584443, train_accuracy : 0.9338659421426694
+Epoch 2/100
+saved a better ckpt.
+val loss: 0.10192923742659547
+  Liver - Val Loss: 0.1505, Dice: 0.8470
+  Right_kidney - Val Loss: 0.0319, Dice: 0.9616
+  Spleen - Val Loss: 0.0422, Dice: 0.9590
+  Pancreas - Val Loss: 0.2312, Dice: 0.7149
+  Aorta - Val Loss: 0.0412, Dice: 0.9477
+  Ivc - Val Loss: 0.0810, Dice: 0.9063
+  Right_adrenal_gland - Val Loss: 0.1873, Dice: 0.7556
+  Left_adrenal_gland - Val Loss: 0.1384, Dice: 0.8157
+  Gallbladder - Val Loss: 0.1099, Dice: 0.8743
+  Esophagus - Val Loss: 0.1153, Dice: 0.8363
+  Stomach - Val Loss: 0.0657, Dice: 0.9263
+  Left_kidney - Val Loss: 0.0285, Dice: 0.9671
+Liver Validation Complete: Loss: 0.3516, Dice: 0.6221
+Right_kidney Validation Complete: Loss: 0.0353, Dice: 0.9538
+Spleen Validation Complete: Loss: 0.0376, Dice: 0.9655
+Pancreas Validation Complete: Loss: 0.1968, Dice: 0.7636
+Aorta Validation Complete: Loss: 0.0389, Dice: 0.9510
+Ivc Validation Complete: Loss: 0.0669, Dice: 0.9262
+Right_adrenal_gland Validation Complete: Loss: 0.1536, Dice: 0.7883
+Left_adrenal_gland Validation Complete: Loss: 0.1243, Dice: 0.8391
+Gallbladder Validation Complete: Loss: 0.0811, Dice: 0.9132
+Esophagus Validation Complete: Loss: 0.1067, Dice: 0.8569
+Stomach Validation Complete: Loss: 0.0497, Dice: 0.9515
+Left_kidney Validation Complete: Loss: 0.0276, Dice: 0.9683
+Time: 20250619-0448, train_Loss: 0.049850496348919665, train_accuracy : 0.9415488138594963
+Epoch 3/100
+val loss: 0.10583989470096672
+  Liver - Val Loss: 0.3516, Dice: 0.6221
+  Right_kidney - Val Loss: 0.0353, Dice: 0.9538
+  Spleen - Val Loss: 0.0376, Dice: 0.9655
+  Pancreas - Val Loss: 0.1968, Dice: 0.7636
+  Aorta - Val Loss: 0.0389, Dice: 0.9510
+  Ivc - Val Loss: 0.0669, Dice: 0.9262
+  Right_adrenal_gland - Val Loss: 0.1536, Dice: 0.7883
+  Left_adrenal_gland - Val Loss: 0.1243, Dice: 0.8391
+  Gallbladder - Val Loss: 0.0811, Dice: 0.9132
+  Esophagus - Val Loss: 0.1067, Dice: 0.8569
+  Stomach - Val Loss: 0.0497, Dice: 0.9515
+  Left_kidney - Val Loss: 0.0276, Dice: 0.9683
+Liver Validation Complete: Loss: 0.1430, Dice: 0.8682
+Right_kidney Validation Complete: Loss: 0.0380, Dice: 0.9519
+Spleen Validation Complete: Loss: 0.0315, Dice: 0.9712
+Pancreas Validation Complete: Loss: 0.1977, Dice: 0.7682
+Aorta Validation Complete: Loss: 0.0392, Dice: 0.9536
+Ivc Validation Complete: Loss: 0.0777, Dice: 0.9203
+Right_adrenal_gland Validation Complete: Loss: 0.1581, Dice: 0.7856
+Left_adrenal_gland Validation Complete: Loss: 0.1200, Dice: 0.8499
+Gallbladder Validation Complete: Loss: 0.0678, Dice: 0.9316
+Esophagus Validation Complete: Loss: 0.0964, Dice: 0.8775
+Stomach Validation Complete: Loss: 0.0497, Dice: 0.9518
+Left_kidney Validation Complete: Loss: 0.0270, Dice: 0.9682
+Time: 20250619-0537, train_Loss: 0.04613642885847707, train_accuracy : 0.9460572178361879
+Epoch 4/100
+saved a better ckpt.
+val loss: 0.08716805944336911
+  Liver - Val Loss: 0.1430, Dice: 0.8682
+  Right_kidney - Val Loss: 0.0380, Dice: 0.9519
+  Spleen - Val Loss: 0.0315, Dice: 0.9712
+  Pancreas - Val Loss: 0.1977, Dice: 0.7682
+  Aorta - Val Loss: 0.0392, Dice: 0.9536
+  Ivc - Val Loss: 0.0777, Dice: 0.9203
+  Right_adrenal_gland - Val Loss: 0.1581, Dice: 0.7856
+  Left_adrenal_gland - Val Loss: 0.1200, Dice: 0.8499
+  Gallbladder - Val Loss: 0.0678, Dice: 0.9316
+  Esophagus - Val Loss: 0.0964, Dice: 0.8775
+  Stomach - Val Loss: 0.0497, Dice: 0.9518
+  Left_kidney - Val Loss: 0.0270, Dice: 0.9682
+Liver Validation Complete: Loss: 0.0778, Dice: 0.9411
+Right_kidney Validation Complete: Loss: 0.0468, Dice: 0.9384
+Spleen Validation Complete: Loss: 0.0371, Dice: 0.9651
+Pancreas Validation Complete: Loss: 0.1737, Dice: 0.7989
+Aorta Validation Complete: Loss: 0.0357, Dice: 0.9565
+Ivc Validation Complete: Loss: 0.0597, Dice: 0.9349
+Right_adrenal_gland Validation Complete: Loss: 0.1384, Dice: 0.8105
+Left_adrenal_gland Validation Complete: Loss: 0.1123, Dice: 0.8617
+Gallbladder Validation Complete: Loss: 0.0699, Dice: 0.9268
+Esophagus Validation Complete: Loss: 0.0924, Dice: 0.8773
+Stomach Validation Complete: Loss: 0.0429, Dice: 0.9591
+Left_kidney Validation Complete: Loss: 0.0258, Dice: 0.9714
+Time: 20250619-0626, train_Loss: 0.04222772613108327, train_accuracy : 0.9508489382128057
+Epoch 5/100
+saved a better ckpt.
+val loss: 0.07605332556662575
+  Liver - Val Loss: 0.0778, Dice: 0.9411
+  Right_kidney - Val Loss: 0.0468, Dice: 0.9384
+  Spleen - Val Loss: 0.0371, Dice: 0.9651
+  Pancreas - Val Loss: 0.1737, Dice: 0.7989
+  Aorta - Val Loss: 0.0357, Dice: 0.9565
+  Ivc - Val Loss: 0.0597, Dice: 0.9349
+  Right_adrenal_gland - Val Loss: 0.1384, Dice: 0.8105
+  Left_adrenal_gland - Val Loss: 0.1123, Dice: 0.8617
+  Gallbladder - Val Loss: 0.0699, Dice: 0.9268
+  Esophagus - Val Loss: 0.0924, Dice: 0.8773
+  Stomach - Val Loss: 0.0429, Dice: 0.9591
+  Left_kidney - Val Loss: 0.0258, Dice: 0.9714
+Liver Validation Complete: Loss: 0.0672, Dice: 0.9532
+Right_kidney Validation Complete: Loss: 0.0295, Dice: 0.9653
+Spleen Validation Complete: Loss: 0.0301, Dice: 0.9736
+Pancreas Validation Complete: Loss: 0.1652, Dice: 0.8121
+Aorta Validation Complete: Loss: 0.0369, Dice: 0.9564
+Ivc Validation Complete: Loss: 0.0590, Dice: 0.9372
+Right_adrenal_gland Validation Complete: Loss: 0.1255, Dice: 0.8387
+Left_adrenal_gland Validation Complete: Loss: 0.1208, Dice: 0.8553
+Gallbladder Validation Complete: Loss: 0.0665, Dice: 0.9297
+Esophagus Validation Complete: Loss: 0.0808, Dice: 0.8950
+Stomach Validation Complete: Loss: 0.0468, Dice: 0.9509
+Left_kidney Validation Complete: Loss: 0.0261, Dice: 0.9704
+Time: 20250619-0714, train_Loss: 0.0388293176759044, train_accuracy : 0.9549082858022336
+Epoch 6/100
+saved a better ckpt.
+val loss: 0.07120050204848212
+  Liver - Val Loss: 0.0672, Dice: 0.9532
+  Right_kidney - Val Loss: 0.0295, Dice: 0.9653
+  Spleen - Val Loss: 0.0301, Dice: 0.9736
+  Pancreas - Val Loss: 0.1652, Dice: 0.8121
+  Aorta - Val Loss: 0.0369, Dice: 0.9564
+  Ivc - Val Loss: 0.0590, Dice: 0.9372
+  Right_adrenal_gland - Val Loss: 0.1255, Dice: 0.8387
+  Left_adrenal_gland - Val Loss: 0.1208, Dice: 0.8553
+  Gallbladder - Val Loss: 0.0665, Dice: 0.9297
+  Esophagus - Val Loss: 0.0808, Dice: 0.8950
+  Stomach - Val Loss: 0.0468, Dice: 0.9509
+  Left_kidney - Val Loss: 0.0261, Dice: 0.9704
+Liver Validation Complete: Loss: 0.0847, Dice: 0.9348
+Right_kidney Validation Complete: Loss: 0.0273, Dice: 0.9720
+Spleen Validation Complete: Loss: 0.0358, Dice: 0.9668
+Pancreas Validation Complete: Loss: 0.1865, Dice: 0.7833
+Aorta Validation Complete: Loss: 0.0350, Dice: 0.9595
+Ivc Validation Complete: Loss: 0.0563, Dice: 0.9381
+Right_adrenal_gland Validation Complete: Loss: 0.1126, Dice: 0.8559
+Left_adrenal_gland Validation Complete: Loss: 0.1102, Dice: 0.8703
+Gallbladder Validation Complete: Loss: 0.0645, Dice: 0.9382
+Esophagus Validation Complete: Loss: 0.0737, Dice: 0.9033
+Stomach Validation Complete: Loss: 0.0397, Dice: 0.9637
+Left_kidney Validation Complete: Loss: 0.0253, Dice: 0.9734
+Time: 20250619-0803, train_Loss: 0.035952904708856044, train_accuracy : 0.9584730134101169
+Epoch 7/100
+saved a better ckpt.
+val loss: 0.07097405777883568
+  Liver - Val Loss: 0.0847, Dice: 0.9348
+  Right_kidney - Val Loss: 0.0273, Dice: 0.9720
+  Spleen - Val Loss: 0.0358, Dice: 0.9668
+  Pancreas - Val Loss: 0.1865, Dice: 0.7833
+  Aorta - Val Loss: 0.0350, Dice: 0.9595
+  Ivc - Val Loss: 0.0563, Dice: 0.9381
+  Right_adrenal_gland - Val Loss: 0.1126, Dice: 0.8559
+  Left_adrenal_gland - Val Loss: 0.1102, Dice: 0.8703
+  Gallbladder - Val Loss: 0.0645, Dice: 0.9382
+  Esophagus - Val Loss: 0.0737, Dice: 0.9033
+  Stomach - Val Loss: 0.0397, Dice: 0.9637
+  Left_kidney - Val Loss: 0.0253, Dice: 0.9734
+Liver Validation Complete: Loss: 0.0818, Dice: 0.9402
+Right_kidney Validation Complete: Loss: 0.0274, Dice: 0.9702
+Spleen Validation Complete: Loss: 0.0264, Dice: 0.9756
+Pancreas Validation Complete: Loss: 0.1807, Dice: 0.7926
+Aorta Validation Complete: Loss: 0.0344, Dice: 0.9591
+Ivc Validation Complete: Loss: 0.0537, Dice: 0.9409
+Right_adrenal_gland Validation Complete: Loss: 0.1472, Dice: 0.8000
+Left_adrenal_gland Validation Complete: Loss: 0.1278, Dice: 0.8435
+Gallbladder Validation Complete: Loss: 0.0649, Dice: 0.9359
+Esophagus Validation Complete: Loss: 0.0820, Dice: 0.8906
+Stomach Validation Complete: Loss: 0.0544, Dice: 0.9431
+Left_kidney Validation Complete: Loss: 0.0256, Dice: 0.9721
+Time: 20250619-0852, train_Loss: 0.034646698987908085, train_accuracy : 0.959803319936726
+Epoch 8/100
+val loss: 0.07550610476745952
+  Liver - Val Loss: 0.0818, Dice: 0.9402
+  Right_kidney - Val Loss: 0.0274, Dice: 0.9702
+  Spleen - Val Loss: 0.0264, Dice: 0.9756
+  Pancreas - Val Loss: 0.1807, Dice: 0.7926
+  Aorta - Val Loss: 0.0344, Dice: 0.9591
+  Ivc - Val Loss: 0.0537, Dice: 0.9409
+  Right_adrenal_gland - Val Loss: 0.1472, Dice: 0.8000
+  Left_adrenal_gland - Val Loss: 0.1278, Dice: 0.8435
+  Gallbladder - Val Loss: 0.0649, Dice: 0.9359
+  Esophagus - Val Loss: 0.0820, Dice: 0.8906
+  Stomach - Val Loss: 0.0544, Dice: 0.9431
+  Left_kidney - Val Loss: 0.0256, Dice: 0.9721
+Liver Validation Complete: Loss: 0.0638, Dice: 0.9570
+Right_kidney Validation Complete: Loss: 0.0256, Dice: 0.9735
+Spleen Validation Complete: Loss: 0.0255, Dice: 0.9777
+Pancreas Validation Complete: Loss: 0.1498, Dice: 0.8357
+Aorta Validation Complete: Loss: 0.0326, Dice: 0.9620
+Ivc Validation Complete: Loss: 0.0499, Dice: 0.9451
+Right_adrenal_gland Validation Complete: Loss: 0.1128, Dice: 0.8542
+Left_adrenal_gland Validation Complete: Loss: 0.1112, Dice: 0.8645
+Gallbladder Validation Complete: Loss: 0.0743, Dice: 0.9277
+Esophagus Validation Complete: Loss: 0.0756, Dice: 0.8991
+Stomach Validation Complete: Loss: 0.0524, Dice: 0.9498
+Left_kidney Validation Complete: Loss: 0.0247, Dice: 0.9732
+Time: 20250619-0940, train_Loss: 0.03236233348307754, train_accuracy : 0.962456162728075
+Epoch 9/100
+saved a better ckpt.
+val loss: 0.06651482738523216
+  Liver - Val Loss: 0.0638, Dice: 0.9570
+  Right_kidney - Val Loss: 0.0256, Dice: 0.9735
+  Spleen - Val Loss: 0.0255, Dice: 0.9777
+  Pancreas - Val Loss: 0.1498, Dice: 0.8357
+  Aorta - Val Loss: 0.0326, Dice: 0.9620
+  Ivc - Val Loss: 0.0499, Dice: 0.9451
+  Right_adrenal_gland - Val Loss: 0.1128, Dice: 0.8542
+  Left_adrenal_gland - Val Loss: 0.1112, Dice: 0.8645
+  Gallbladder - Val Loss: 0.0743, Dice: 0.9277
+  Esophagus - Val Loss: 0.0756, Dice: 0.8991
+  Stomach - Val Loss: 0.0524, Dice: 0.9498
+  Left_kidney - Val Loss: 0.0247, Dice: 0.9732
