@@ -1,0 +1,86 @@
+{
+  "os": "Linux-4.18.0-553.36.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "python": "CPython 3.13.2",
+  "startedAt": "2025-06-19T08:05:13.012010Z",
+  "args": [
+    "--use_clip",
+    "True",
+    "--clip_variant",
+    "clip",
+    "-use_wandb"
+  ],
+  "program": "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu_new.py",
+  "codePath": "train_one_gpu_new.py",
+  "email": "limingluo2025@u.northwestern.edu",
+  "root": "/gpfs/home/uqz9095/OMT-SAM",
+  "host": "qgpu3015",
+  "executable": "/home/uqz9095/miniconda3/bin/python",
+  "codePathLocal": "train_one_gpu_new.py",
+  "cpu_count": 64,
+  "cpu_count_logical": 64,
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "540905492480",
+      "used": "7169368064"
+    }
+  },
+  "memory": {
+    "total": "1081810984960"
+  },
+  "cpu": {
+    "count": 64,
+    "countLogical": 64
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA H100 80GB HBM3",
+      "memoryTotal": "85520809984",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-8b9bfebd-00f1-1a41-116d-888d21dd2b46"
+    }
+  ],
+  "slurm": {
+    "cluster_name": "quest",
+    "conf": "/etc/slurm/slurm.conf",
+    "cpus_on_node": "12",
+    "cpus_per_task": "12",
+    "gpus_on_node": "1",
+    "gtids": "0",
+    "job_account": "p32870",
+    "job_cpus_per_node": "12",
+    "job_end_time": "1750492980",
+    "job_gid": "2000635",
+    "job_gpus": "1",
+    "job_id": "5965264",
+    "job_name": "new_clip_train",
+    "job_nodelist": "qgpu3015",
+    "job_num_nodes": "1",
+    "job_partition": "gengpu",
+    "job_qos": "normal",
+    "job_start_time": "1750320180",
+    "job_uid": "2000635",
+    "job_user": "uqz9095",
+    "jobid": "5965264",
+    "localid": "0",
+    "mem_per_cpu": "3110",
+    "nnodes": "1",
+    "nodeid": "0",
+    "nodelist": "qgpu3015",
+    "nprocs": "1",
+    "ntasks": "1",
+    "ntasks_per_node": "1",
+    "prio_process": "0",
+    "procid": "0",
+    "submit_dir": "/gpfs/home/uqz9095/OMT-SAM",
+    "submit_host": "quser43",
+    "task_pid": "3246256",
+    "tasks_per_node": "1",
+    "topology_addr": "qgpu3015",
+    "topology_addr_pattern": "node",
+    "tres_per_task": "cpu=12"
+  },
+  "cudaVersion": "12.8"
+}

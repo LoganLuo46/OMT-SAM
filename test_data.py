@@ -1,4 +1,3 @@
-
 # id ↔ name 按你截图确定
 ORGANS = {
      1: "liver",
@@ -29,7 +28,7 @@ class OrganSliceDataset(Dataset):
         gt   → 1×256×256    int64    {0,1}
         bbox → 4            float32  [x1,y1,x2,y2]
     """
-    def __init__(self, npz_dir, organ_id,
+    def __init__(self, npz_dir, organ_id, tokenizer,
                  bbox_shift=20, img_size=1024, gt_size=256,
                  ):
         super().__init__()
@@ -39,7 +38,8 @@ class OrganSliceDataset(Dataset):
         self.bbox_shift = bbox_shift
         self.img_size   = img_size
         self.gt_size    = gt_size
-        self.tokenizer = AutoTokenizer.from_pretrained("microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224")
+        self.tokenizer = tokenizer
+        print(f"[OrganSliceDataset] organ: {self.organ_name}, tokenizer: {self.tokenizer}")
         self.slice_map = []
         for fid, f in enumerate(self.npz_files):
             with np.load(f) as d:
