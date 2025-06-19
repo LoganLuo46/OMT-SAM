@@ -6,8 +6,8 @@
 |:------------:|:-----------------------------------------------|:------------------------------------------------------|:------------------------------------------------------------|
 | biomedclip   | clip_train.err / clip_train.log                |                                                      | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250616-0933/ |
 | biomedclip   |                                               | clip_train_2nd.err / clip_train_2nd.log               | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250618-1313/ |
-| bioclip      | bioclip_train.err / bioclip_train.log          |                                                      | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250619-0304/ |
-| clip         | new_clip_train.err / new_clip_train.log        |                                                      | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250619-0311/ |
+| bioclip      | bioclip_train_new.err / bioclip_train_new.log          |                                                      | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_bioclip_20250619-094022 |
+| clip         | new_clip_train_new.err / new_clip_train_new.log        |                                                      | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_clip_20250619-094022 |
 
 
 ## Average Dice per Epoch CSV and Plot
