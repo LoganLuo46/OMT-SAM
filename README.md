@@ -2,7 +2,7 @@
 
 ## Script, clip_variant, log and output directory mapping
 
-| clip_variant | First Round (clip_train.err / clip_train.log)  | Second Round (clip_train_2nd.err / clip_train_2nd.log) | Output directory                                              |
+| clip_variant | First Round (trian.err / train.log)  | Second Round (train.err / train.log) | Output directory                                              |
 |:------------:|:-----------------------------------------------|:------------------------------------------------------|:------------------------------------------------------------|
 | biomedclip   | clip_train.err / clip_train.log                |                                                      | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250616-0933/ |
 | biomedclip   |                                               | clip_train_2nd.err / clip_train_2nd.log               | work_dir/MedSAM-ViT-B_MSFalse_oneneckFalse_use_clip_20250618-1313/ |
