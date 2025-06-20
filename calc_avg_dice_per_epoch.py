@@ -2,9 +2,9 @@ import re
 import csv
 import matplotlib.pyplot as plt
 
-log_file = "new_clip_train.log"
-out_file = "new_clip_train.log.csv"
-plot_file = "new_clip_train.log.png"
+log_file = "clip_train.log"
+out_file = "clip_train.log.csv"
+plot_file = "clip_train.log.png"
 
 # List of organs (update if your organ set changes)
 organ_names = [

@@ -1,0 +1,6 @@
+Validating ivc:  35%|███▍      | 28/81 [00:25<00:43,  1.21it/s]              
+Liver Validation Complete: Loss: 0.3166, Dice: 0.7174
+Right_kidney Validation Complete: Loss: 0.0340, Dice: 0.9640
+Spleen Validation Complete: Loss: 0.0469, Dice: 0.9560
+Pancreas Validation Complete: Loss: 0.1951, Dice: 0.7707
+Aorta Validation Complete: Loss: 0.0450, Dice: 0.9461

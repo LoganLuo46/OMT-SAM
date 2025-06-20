@@ -1,0 +1,7 @@
+{"time":"2025-06-20T17:06:48.155614907-05:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"/gpfs/projects/p32870/OMT-SAM/wandb/run-20250620_170647-hcltcizj/logs/debug-core.log"}
+{"time":"2025-06-20T17:06:48.373857673-05:00","level":"INFO","msg":"stream: created new stream","id":"hcltcizj"}
+{"time":"2025-06-20T17:06:48.373891215-05:00","level":"INFO","msg":"stream: started","id":"hcltcizj"}
+{"time":"2025-06-20T17:06:48.373912611-05:00","level":"INFO","msg":"writer: Do: started","stream_id":"hcltcizj"}
+{"time":"2025-06-20T17:06:48.373913458-05:00","level":"INFO","msg":"handler: started","stream_id":"hcltcizj"}
+{"time":"2025-06-20T17:06:48.373913692-05:00","level":"INFO","msg":"sender: started","stream_id":"hcltcizj"}
+{"time":"2025-06-20T17:06:48.528368652-05:00","level":"INFO","msg":"Starting system monitor"}
