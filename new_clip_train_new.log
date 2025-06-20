@@ -517,3 +517,20 @@ val loss: 0.06056194494779839
   Esophagus - Val Loss: 0.0753, Dice: 0.9078
   Stomach - Val Loss: 0.0463, Dice: 0.9570
   Left_kidney - Val Loss: 0.0234, Dice: 0.9764
+Liver Validation Complete: Loss: 0.0374, Dice: 0.9800
+Right_kidney Validation Complete: Loss: 0.0223, Dice: 0.9763
+Spleen Validation Complete: Loss: 0.0261, Dice: 0.9821
+Pancreas Validation Complete: Loss: 0.1031, Dice: 0.8891
+Aorta Validation Complete: Loss: 0.0320, Dice: 0.9650
+Ivc Validation Complete: Loss: 0.0523, Dice: 0.9438
+Right_adrenal_gland Validation Complete: Loss: 0.1187, Dice: 0.8719
+Left_adrenal_gland Validation Complete: Loss: 0.1163, Dice: 0.8666
+Gallbladder Validation Complete: Loss: 0.0601, Dice: 0.9392
+Esophagus Validation Complete: Loss: 0.0823, Dice: 0.9044
+Stomach Validation Complete: Loss: 0.0377, Dice: 0.9682
+Left_kidney Validation Complete: Loss: 0.0231, Dice: 0.9775
+Time: 20250619-2329, train_Loss: 0.01793429687258759, train_accuracy : 0.9789753716303319
+Epoch 18/100
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mbumbling-sun-14[0m at: [34mhttps://wandb.ai/limingluo2025-northwestern-university/SAM/runs/6zqi355b[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../gpfs/home/uqz9095/OMT-SAM/wandb/run-20250619_094039-6zqi355b/logs[0m

@@ -458,9 +458,40 @@ def main():
             "optimizer": optimizer.state_dict(),
             "epoch": epoch,
         }
-        print(f"save successfully in the path {model_save_path}")
-        torch.save(checkpoint, join(model_save_path, "medsam_model_latest.pth"))
         
+        # Save with error handling and retry mechanism
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                # Save to temporary file first
+                temp_path = join(model_save_path, f"medsam_model_latest_temp_{attempt}.pth")
+                torch.save(checkpoint, temp_path)
+                
+                # Verify the saved file
+                test_load = torch.load(temp_path, map_location='cpu')
+                if 'model' in test_load and 'optimizer' in test_load:
+                    # Atomic move to final location
+                    final_path = join(model_save_path, "medsam_model_latest.pth")
+                    os.rename(temp_path, final_path)
+                    print(f"Latest model saved successfully to {final_path}")
+                    break
+                else:
+                    raise ValueError("Checkpoint verification failed")
+                    
+            except Exception as e:
+                print(f"Attempt {attempt + 1} failed: {e}")
+                # Clean up temp file
+                if os.path.exists(temp_path):
+                    try:
+                        os.remove(temp_path)
+                    except:
+                        pass
+                
+                if attempt == max_retries - 1:
+                    print(f"Failed to save latest model after {max_retries} attempts")
+                else:
+                    import time
+                    time.sleep(2)  # Wait before retry
 
         total_val_loss = 0 
         for loss in val_losses.values():
@@ -474,8 +505,40 @@ def main():
                 "optimizer": optimizer.state_dict(),
                 "epoch": epoch,
             }
-            torch.save(checkpoint, join(model_save_path, "medsam_model_best.pth"))
-            print("saved a better ckpt.")
+            
+            # Save with error handling and retry mechanism
+            max_retries = 3
+            for attempt in range(max_retries):
+                try:
+                    # Save to temporary file first
+                    temp_path = join(model_save_path, f"medsam_model_best_temp_{attempt}.pth")
+                    torch.save(checkpoint, temp_path)
+                    
+                    # Verify the saved file
+                    test_load = torch.load(temp_path, map_location='cpu')
+                    if 'model' in test_load and 'optimizer' in test_load:
+                        # Atomic move to final location
+                        final_path = join(model_save_path, "medsam_model_best.pth")
+                        os.rename(temp_path, final_path)
+                        print("saved a better ckpt.")
+                        break
+                    else:
+                        raise ValueError("Checkpoint verification failed")
+                        
+                except Exception as e:
+                    print(f"Best model save attempt {attempt + 1} failed: {e}")
+                    # Clean up temp file
+                    if os.path.exists(temp_path):
+                        try:
+                            os.remove(temp_path)
+                        except:
+                            pass
+                    
+                    if attempt == max_retries - 1:
+                        print(f"Failed to save best model after {max_retries} attempts")
+                    else:
+                        import time
+                        time.sleep(2)  # Wait before retry
 
         print("val loss:", total_val_loss)
         for organ, metrics in val_results.items():

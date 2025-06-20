@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu_new_Step3.py", line 511, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu_new_Step3.py", line 381, in main
+    for image, gt2D, boxes, _, text_input in tqdm(train_loader, desc=f"Training {ORGANS[oid]}", leave=False):
+                                             ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/tqdm/std.py", line 1096, in __init__
+    self.sp = self.status_printer(self.fp)
+              ~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/tqdm/std.py", line 449, in status_printer
+    getattr(sys.stdout, 'flush', lambda: None)()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+OSError: [Errno 122] Disk quota exceeded
