@@ -1,1 +1,46 @@
-Training liver:  69%|██████▉   | 174/253 [04:00<01:47,  1.36s/it]
+Traceback (most recent call last):                                             
+Liver Validation Complete: Loss: 0.1962, Dice: 0.8229
+Right_kidney Validation Complete: Loss: 0.0321, Dice: 0.9635
+Spleen Validation Complete: Loss: 0.0468, Dice: 0.9549
+Pancreas Validation Complete: Loss: 0.2019, Dice: 0.7560
+Aorta Validation Complete: Loss: 0.0414, Dice: 0.9461
+Ivc Validation Complete: Loss: 0.0836, Dice: 0.9002
+Right_adrenal_gland Validation Complete: Loss: 0.1758, Dice: 0.7799
+Left_adrenal_gland Validation Complete: Loss: 0.1260, Dice: 0.8312
+Gallbladder Validation Complete: Loss: 0.1053, Dice: 0.8832
+Esophagus Validation Complete: Loss: 0.1111, Dice: 0.8448
+Stomach Validation Complete: Loss: 0.0477, Dice: 0.9538
+Left_kidney Validation Complete: Loss: 0.0266, Dice: 0.9685
+Time: 20250619-1439, train_Loss: 0.05760800370077036, train_accuracy : 0.9333101008483179
+Epoch 2/100
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/serialization.py", line 944, in save
+    _save(
+    ~~~~~^
+        obj,
+        ^^^^
+    ...<3 lines>...
+        _disable_byteorder_record,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/serialization.py", line 1216, in _save
+    zip_file.write_record(name, storage, num_bytes)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/2276: file write failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu_new_Step3.py", line 505, in <module>
+    main()
+    ~~~~^^
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu_new_Step3.py", line 471, in main
+    torch.save(checkpoint, join(model_save_path, "medsam_model_best.pth"))
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/serialization.py", line 943, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/serialization.py", line 784, in __exit__
+    self.file_like.write_end_of_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 1677331584 vs 1677331472

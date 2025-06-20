@@ -126,3 +126,20 @@ Loaded prompts from organ_prompts_ten.txt
 [left_kidney]  cases: 40, slices: 1650
 Checkpoint loaded successfully. Starting from epoch 1.
 Using wandb
+Liver Validation Complete: Loss: 0.1962, Dice: 0.8229
+Right_kidney Validation Complete: Loss: 0.0321, Dice: 0.9635
+Spleen Validation Complete: Loss: 0.0468, Dice: 0.9549
+Pancreas Validation Complete: Loss: 0.2019, Dice: 0.7560
+Aorta Validation Complete: Loss: 0.0414, Dice: 0.9461
+Ivc Validation Complete: Loss: 0.0836, Dice: 0.9002
+Right_adrenal_gland Validation Complete: Loss: 0.1758, Dice: 0.7799
+Left_adrenal_gland Validation Complete: Loss: 0.1260, Dice: 0.8312
+Gallbladder Validation Complete: Loss: 0.1053, Dice: 0.8832
+Esophagus Validation Complete: Loss: 0.1111, Dice: 0.8448
+Stomach Validation Complete: Loss: 0.0477, Dice: 0.9538
+Left_kidney Validation Complete: Loss: 0.0266, Dice: 0.9685
+Time: 20250619-1439, train_Loss: 0.05760800370077036, train_accuracy : 0.9333101008483179
+Epoch 2/100
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mfresh-bush-15[0m at: [34mhttps://wandb.ai/limingluo2025-northwestern-university/SAM/runs/nh4hejqj[0m
+[1;34mwandb[0m: Find logs at: [1;35m../../../gpfs/home/uqz9095/OMT-SAM/wandb/run-20250619_135023-nh4hejqj/logs[0m

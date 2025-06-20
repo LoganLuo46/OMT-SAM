@@ -359,3 +359,128 @@ val loss: 0.059683499221666804
   Esophagus - Val Loss: 0.0697, Dice: 0.9123
   Stomach - Val Loss: 0.0378, Dice: 0.9667
   Left_kidney - Val Loss: 0.0241, Dice: 0.9753
+Liver Validation Complete: Loss: 0.0515, Dice: 0.9521
+Right_kidney Validation Complete: Loss: 0.0265, Dice: 0.9724
+Spleen Validation Complete: Loss: 0.0229, Dice: 0.9816
+Pancreas Validation Complete: Loss: 0.1317, Dice: 0.8494
+Aorta Validation Complete: Loss: 0.0329, Dice: 0.9632
+Ivc Validation Complete: Loss: 0.0533, Dice: 0.9438
+Right_adrenal_gland Validation Complete: Loss: 0.1352, Dice: 0.8369
+Left_adrenal_gland Validation Complete: Loss: 0.1183, Dice: 0.8676
+Gallbladder Validation Complete: Loss: 0.0663, Dice: 0.9393
+Esophagus Validation Complete: Loss: 0.0783, Dice: 0.9058
+Stomach Validation Complete: Loss: 0.0432, Dice: 0.9625
+Left_kidney Validation Complete: Loss: 0.0243, Dice: 0.9748
+Time: 20250619-1432, train_Loss: 0.022624777427697636, train_accuracy : 0.9739280683079506
+Epoch 15/100
+val loss: 0.06536755235802667
+  Liver - Val Loss: 0.0515, Dice: 0.9521
+  Right_kidney - Val Loss: 0.0265, Dice: 0.9724
+  Spleen - Val Loss: 0.0229, Dice: 0.9816
+  Pancreas - Val Loss: 0.1317, Dice: 0.8494
+  Aorta - Val Loss: 0.0329, Dice: 0.9632
+  Ivc - Val Loss: 0.0533, Dice: 0.9438
+  Right_adrenal_gland - Val Loss: 0.1352, Dice: 0.8369
+  Left_adrenal_gland - Val Loss: 0.1183, Dice: 0.8676
+  Gallbladder - Val Loss: 0.0663, Dice: 0.9393
+  Esophagus - Val Loss: 0.0783, Dice: 0.9058
+  Stomach - Val Loss: 0.0432, Dice: 0.9625
+  Left_kidney - Val Loss: 0.0243, Dice: 0.9748
+Liver Validation Complete: Loss: 0.0364, Dice: 0.9781
+Right_kidney Validation Complete: Loss: 0.0264, Dice: 0.9747
+Spleen Validation Complete: Loss: 0.0243, Dice: 0.9794
+Pancreas Validation Complete: Loss: 0.1338, Dice: 0.8465
+Aorta Validation Complete: Loss: 0.0315, Dice: 0.9644
+Ivc Validation Complete: Loss: 0.0484, Dice: 0.9485
+Right_adrenal_gland Validation Complete: Loss: 0.1173, Dice: 0.8624
+Left_adrenal_gland Validation Complete: Loss: 0.1151, Dice: 0.8671
+Gallbladder Validation Complete: Loss: 0.0642, Dice: 0.9428
+Esophagus Validation Complete: Loss: 0.0759, Dice: 0.9077
+Stomach Validation Complete: Loss: 0.0356, Dice: 0.9691
+Left_kidney Validation Complete: Loss: 0.0240, Dice: 0.9751
+Time: 20250619-1521, train_Loss: 0.020614912627505477, train_accuracy : 0.9760247632431309
+Epoch 16/100
+val loss: 0.06108516153400265
+  Liver - Val Loss: 0.0364, Dice: 0.9781
+  Right_kidney - Val Loss: 0.0264, Dice: 0.9747
+  Spleen - Val Loss: 0.0243, Dice: 0.9794
+  Pancreas - Val Loss: 0.1338, Dice: 0.8465
+  Aorta - Val Loss: 0.0315, Dice: 0.9644
+  Ivc - Val Loss: 0.0484, Dice: 0.9485
+  Right_adrenal_gland - Val Loss: 0.1173, Dice: 0.8624
+  Left_adrenal_gland - Val Loss: 0.1151, Dice: 0.8671
+  Gallbladder - Val Loss: 0.0642, Dice: 0.9428
+  Esophagus - Val Loss: 0.0759, Dice: 0.9077
+  Stomach - Val Loss: 0.0356, Dice: 0.9691
+  Left_kidney - Val Loss: 0.0240, Dice: 0.9751
+Liver Validation Complete: Loss: 0.0370, Dice: 0.9789
+Right_kidney Validation Complete: Loss: 0.0252, Dice: 0.9762
+Spleen Validation Complete: Loss: 0.0223, Dice: 0.9817
+Pancreas Validation Complete: Loss: 0.1285, Dice: 0.8565
+Aorta Validation Complete: Loss: 0.0333, Dice: 0.9633
+Ivc Validation Complete: Loss: 0.0564, Dice: 0.9414
+Right_adrenal_gland Validation Complete: Loss: 0.1166, Dice: 0.8704
+Left_adrenal_gland Validation Complete: Loss: 0.1179, Dice: 0.8673
+Gallbladder Validation Complete: Loss: 0.0631, Dice: 0.9446
+Esophagus Validation Complete: Loss: 0.0752, Dice: 0.9119
+Stomach Validation Complete: Loss: 0.0374, Dice: 0.9681
+Left_kidney Validation Complete: Loss: 0.0243, Dice: 0.9753
+Time: 20250619-1610, train_Loss: 0.018852564141948046, train_accuracy : 0.9778996121755038
+Epoch 17/100
+val loss: 0.061444109397132976
+  Liver - Val Loss: 0.0370, Dice: 0.9789
+  Right_kidney - Val Loss: 0.0252, Dice: 0.9762
+  Spleen - Val Loss: 0.0223, Dice: 0.9817
+  Pancreas - Val Loss: 0.1285, Dice: 0.8565
+  Aorta - Val Loss: 0.0333, Dice: 0.9633
+  Ivc - Val Loss: 0.0564, Dice: 0.9414
+  Right_adrenal_gland - Val Loss: 0.1166, Dice: 0.8704
+  Left_adrenal_gland - Val Loss: 0.1179, Dice: 0.8673
+  Gallbladder - Val Loss: 0.0631, Dice: 0.9446
+  Esophagus - Val Loss: 0.0752, Dice: 0.9119
+  Stomach - Val Loss: 0.0374, Dice: 0.9681
+  Left_kidney - Val Loss: 0.0243, Dice: 0.9753
+Liver Validation Complete: Loss: 0.0336, Dice: 0.9803
+Right_kidney Validation Complete: Loss: 0.0257, Dice: 0.9766
+Spleen Validation Complete: Loss: 0.0223, Dice: 0.9819
+Pancreas Validation Complete: Loss: 0.1216, Dice: 0.8620
+Aorta Validation Complete: Loss: 0.0326, Dice: 0.9640
+Ivc Validation Complete: Loss: 0.0494, Dice: 0.9477
+Right_adrenal_gland Validation Complete: Loss: 0.1145, Dice: 0.8674
+Left_adrenal_gland Validation Complete: Loss: 0.1236, Dice: 0.8559
+Gallbladder Validation Complete: Loss: 0.0811, Dice: 0.9208
+Esophagus Validation Complete: Loss: 0.0807, Dice: 0.9031
+Stomach Validation Complete: Loss: 0.0456, Dice: 0.9605
+Left_kidney Validation Complete: Loss: 0.0244, Dice: 0.9761
+Time: 20250619-1658, train_Loss: 0.018182463921190488, train_accuracy : 0.9786808289875479
+Epoch 18/100
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/serialization.py", line 944, in save
+    _save(
+    ~~~~~^
+        obj,
+        ^^^^
+    ...<3 lines>...
+        _disable_byteorder_record,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/serialization.py", line 1216, in _save
+    zip_file.write_record(name, storage, num_bytes)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: [enforce fail at inline_container.cc:815] . PytorchStreamWriter failed writing file data/99: file write failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu_new.py", line 499, in <module>
+    plt.savefig(join(model_save_path, "training_curves.png"))
+    ^^
+  File "/gpfs/home/uqz9095/OMT-SAM/train_one_gpu_new.py", line 451, in main
+    "model": medsam_model.state_dict(),
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/serialization.py", line 943, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+         ~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/uqz9095/miniconda3/lib/python3.13/site-packages/torch/serialization.py", line 784, in __exit__
+    self.file_like.write_end_of_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+RuntimeError: [enforce fail at inline_container.cc:626] . unexpected pos 2932905280 vs 2932905172

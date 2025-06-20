@@ -254,7 +254,7 @@ def main():
     parser.add_argument("--checkpoint", type=str, default="./work_dir/SAM/sam_vit_b_01ec64.pth")
     parser.add_argument("--load_pretrain", type=bool, default=True, help="Load pretrain model")
     parser.add_argument("-pretrain_model_path", type=str, default="")
-    parser.add_argument("-work_dir", type=str, default="./work_dir")
+    parser.add_argument("-work_dir", type=str, default="./work_dir1")
     parser.add_argument("-num_epochs", type=int, default=100)
     parser.add_argument("-batch_size", type=int, default=8)
     parser.add_argument("-num_workers", type=int, default=8)
@@ -284,9 +284,13 @@ def main():
     use_clip_str = "_use_clip" if args.use_clip else "_no_clip"
     clip_variant = args.clip_variant
     tokenizer_name = args.tokenizer
+    
+    # Create prompt_id to distinguish different prompt configurations
+    prompt_id = "no_prompt" if args.prompt_file is None else os.path.splitext(os.path.basename(args.prompt_file))[0]
+    
     model_save_path = join(
         args.work_dir,
-        f"{args.task_name}_MS{args.ms_features}_oneneck{args.one_neck}_{args.clip_variant}_{run_id}"
+        f"{args.task_name}_{prompt_id}_MS{args.ms_features}_oneneck{args.one_neck}_{args.clip_variant}_{run_id}"
     )
 
     #args = parser.parse_args()
@@ -454,8 +458,10 @@ def main():
             "optimizer": optimizer.state_dict(),
             "epoch": epoch,
         }
+        print(f"save successfully in the path {model_save_path}")
         torch.save(checkpoint, join(model_save_path, "medsam_model_latest.pth"))
         
+
         total_val_loss = 0 
         for loss in val_losses.values():
             total_val_loss += loss[-1] / len(val_losses)
