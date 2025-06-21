@@ -85,7 +85,7 @@ def train_val_split(dataset, val_ratio=0.2):
     return train_ds, val_ds
 
 
-def build_loaders(root_dir, clip_model_name, tokenizer, batch_size=4, num_workers=4, prompt_file=None):
+def build_loaders(root_dir, tokenizer, batch_size=4, num_workers=4, prompt_file="organ_prompts_ten_2nd_version.txt"):
     train_sets, val_sets, loaders = {}, {}, {}
     for oid in ORGANS.keys():
         try:
@@ -103,21 +103,6 @@ def build_loaders(root_dir, clip_model_name, tokenizer, batch_size=4, num_worker
                                 pin_memory=True)
         }
     return loaders
-
-def build_loaders(root_dir, clip_model_name, prompt_file="organ_prompts_ten.txt",batch_size=1, num_workers=0):
-    from torch.utils.data import Subset
-    loaders = {}
-    target_oid = 3
-    
-try:
-    full_ds = OrganSliceDataset(root_dir,clip_model_name=clip_model_name, prompt_file=prompt_file, organ_id=target_oid)
-train_ds = Subset(full_ds, indices=[0])
-val_ds = Subset(full_ds, indices=[0])
-loaders[target_oid]= {
-"train": DataLoader(train_ds, batch_sizebatch_size, shuffle=False, num_workers=num workers)"val": DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=num_workers)
-except RuntimeError as e:
-print(f"Failed to load organ {target_oid}: {e}")
-return loaders
 
 # MedSAM model
 class MedSAM(nn.Module):

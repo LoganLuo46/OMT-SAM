@@ -1,0 +1,120 @@
+liver: Precisely outline the entire liver parenchyma avoiding adjacent diaphragm.
+liver: Segment the liver tissue excluding gallbladder and major vessels inside.
+liver: Identify the homogeneous hepatic mass occupying right upper abdomen.
+liver: Trace the external liver capsule following its smooth contour.
+liver: Delimit the right and left hepatic lobes as a single continuous organ.
+liver: Mark all liver tissue inferior to diaphragm and superior to kidneys.
+liver: Select the solid organ attached to the falciform ligament region.
+liver: Enclose hepatic parenchyma while sparing inferior vena cava.
+liver: Capture the wedge‑shaped liver spanning midline to right flank.
+liver: Delineate liver boundaries where parenchyma enhances uniformly.
+right_kidney: Segment the bean‑shaped right kidney including cortex and medulla.
+right_kidney: Outline right renal parenchyma without perinephric fat.
+right_kidney: Identify the right kidney inferior to liver and lateral to spine.
+right_kidney: Trace the capsule of right kidney sparing renal vessels hilum.
+right_kidney: Enclose whole right kidney avoiding adrenal gland above.
+right_kidney: Select renal tissue on patient’s right side posterior abdomen.
+right_kidney: Capture oval organ nestled in right paravertebral gutter.
+right_kidney: Mark right kidney contour excluding collecting system lumen.
+right_kidney: Precisely delineate right renal cortex and pyramids together.
+right_kidney: Segment right kidney bordered by Gerota’s fascia.
+spleen: Outline the crescent‑shaped spleen under left hemidiaphragm.
+spleen: Segment splenic parenchyma excluding gastric wall contact.
+spleen: Trace spleen margin hugging ribs in left upper quadrant.
+spleen: Delineate homogeneous splenic tissue posterior to stomach.
+spleen: Enclose spleen avoiding pancreatic tail anteriorly.
+spleen: Capture all splenic pulp bounded by capsule.
+spleen: Identify the ovoid organ lateral to left kidney and superior.
+spleen: Segment spleen while sparing adjacent colonic flexure.
+spleen: Mark splenic tissue with its characteristic notched border.
+spleen: Precisely trace spleen parenchyma beneath diaphragm.
+pancreas: Segment entire pancreas head, body, and tail excluding duodenum.
+pancreas: Outline panc­reas elongated gland anterior to splenic vein.
+pancreas: Delineate lobulated pancreatic tissue spanning midline to spleen.
+pancreas: Enclose pancreas while sparing surrounding fat and vessels.
+pancreas: Trace pancreatic parenchyma hugging posterior stomach wall.
+pancreas: Identify glandular pancreas nestled in C‑loop of duodenum.
+pancreas: Capture pancreas tail pointing toward splenic hilum.
+pancreas: Mark pancreas body crossing anterior to aorta.
+pancreas: Segment pancreas with duct included but exclude bile duct.
+pancreas: Precisely outline pancreas avoiding adjacent small bowel.
+aorta: Segment abdominal aorta lumen from diaphragm to bifurcation.
+aorta: Trace circular aortic wall excluding surrounding fat.
+aorta: Identify high‑attenuation aortic blood pool anterior to spine.
+aorta: Delineate aorta while sparing inferior vena cava on right.
+aorta: Enclose descending aorta centrally within retroperitoneum.
+aorta: Capture aorta calibre until common iliac branching point.
+aorta: Outline aortic vessel wall without calcified plaque shadow.
+aorta: Mark aorta course parallel to vertebral bodies.
+aorta: Precisely segment pulsatile aortic lumen only.
+aorta: Select major arterial trunk superior to renal arteries.
+ivc: Segment inferior vena cava lumen up to hepatic veins entry.
+ivc: Trace IVC thin wall right of aorta through abdomen.
+ivc: Identify low‑attenuation venous channel returning to heart.
+ivc: Outline IVC excluding adjacent right renal vein confluence.
+ivc: Capture IVC cylinder anterior to vertebral column.
+ivc: Enclose inferior vena cava until it pierces diaphragm.
+ivc: Segment IVC avoiding overlapping aorta pixels.
+ivc: Mark venous lumen with darker contrast than arteries.
+ivc: Precisely delineate IVC from iliac confluence upward.
+ivc: Select compressible IVC lying right to midline.
+right_adrenal_gland: Outline right adrenal gland superior to right kidney.
+right_adrenal_gland: Segment small V‑shaped right adrenal avoiding IVC.
+right_adrenal_gland: Identify right adrenal cortex and medulla tissue.
+right_adrenal_gland: Delineate triangular right adrenal just beneath liver.
+right_adrenal_gland: Enclose right adrenal gland excluding periadrenal fat.
+right_adrenal_gland: Capture endocrine gland atop upper pole of right kidney.
+right_adrenal_gland: Trace right adrenal hugging diaphragm crus.
+right_adrenal_gland: Mark right adrenal avoiding adjacent renal vessels.
+right_adrenal_gland: Precisely segment right adrenal body and limbs.
+right_adrenal_gland: Select small right suprarenal gland tissue.
+left_adrenal_gland: Outline left adrenal gland anteromedial to left kidney.
+left_adrenal_gland: Segment Y‑shaped left adrenal superior to renal hilum.
+left_adrenal_gland: Identify left adrenal tissue beneath spleen tail.
+left_adrenal_gland: Delineate left adrenal excluding adjacent pancreas.
+left_adrenal_gland: Enclose left adrenal gland avoiding surrounding fat.
+left_adrenal_gland: Capture endocrine gland atop left kidney’s upper pole.
+left_adrenal_gland: Trace left adrenal hugging aorta vicinity.
+left_adrenal_gland: Mark left adrenal limbs and body accurately.
+left_adrenal_gland: Precisely segment left suprarenal without vessels.
+left_adrenal_gland: Select small left adrenal gland tissue only.
+gallbladder: Segment pear‑shaped gallbladder fossa under liver.
+gallbladder: Outline gallbladder lumen and wall excluding liver tissue.
+gallbladder: Identify fluid‑filled gallbladder anterior to right kidney.
+gallbladder: Delineate gallbladder neck, body, and fundus.
+gallbladder: Enclose gallbladder avoiding cystic duct beyond neck.
+gallbladder: Capture thin‑walled gallbladder attached to hepatic underside.
+gallbladder: Trace gallbladder contour sparing hepatic parenchyma.
+gallbladder: Mark gallbladder sac with homogenous bile density.
+gallbladder: Precisely segment gallbladder fundus to infundibulum.
+gallbladder: Select gallbladder avoiding nearby duodenum.
+esophagus: Segment distal esophagus within diaphragmatic hiatus.
+esophagus: Outline esophageal lumen and wall above stomach cardia.
+esophagus: Identify tubular esophagus descending posterior mediastinum.
+esophagus: Delineate esophagus excluding adjacent aorta and trachea.
+esophagus: Enclose muscular esophageal tube anterior to spine.
+esophagus: Capture lower esophagus just before gastro‑esophageal junction.
+esophagus: Trace esophagus avoiding stomach fundus.
+esophagus: Mark esophageal wall with thin mucosal lining.
+esophagus: Precisely segment esophagus mid‑line structure.
+esophagus: Select esophagus from thoracic inlet to hiatus.
+stomach: Segment stomach from cardia to pylorus excluding duodenum.
+stomach: Outline gastric lumen and wall including fundus and body.
+stomach: Identify J‑shaped stomach beneath left diaphragm.
+stomach: Delineate stomach avoiding spleen and pancreas.
+stomach: Enclose gas‑filled stomach with rugal folds visible.
+stomach: Capture stomach curvatures greater and lesser.
+stomach: Trace stomach antrum toward pyloric canal.
+stomach: Mark gastric wall excluding adjacent liver edge.
+stomach: Precisely segment stomach contents and wall.
+stomach: Select stomach chamber anterior to pancreas.
+left_kidney: Segment bean‑shaped left kidney including cortex and medulla.
+left_kidney: Outline left renal parenchyma without perinephric fat.
+left_kidney: Identify left kidney inferior to spleen and lateral to aorta.
+left_kidney: Trace capsule of left kidney sparing renal vessels hilum.
+left_kidney: Enclose whole left kidney excluding adrenal gland above.
+left_kidney: Select renal tissue on patient’s left side posterior abdomen.
+left_kidney: Capture oval organ nestled in left paravertebral gutter.
+left_kidney: Mark left kidney contour excluding collecting system lumen.
+left_kidney: Precisely delineate left renal cortex and pyramids together.
+left_kidney: Segment left kidney bordered by Gerota’s fascia.
